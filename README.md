@@ -76,9 +76,64 @@ The Fade Finder Barbershop App is a social networking app designed for individua
 - Profile -> Edit profile fields
 - Settings -> Toggle app preferences
 
-## Wireframes
 
+## Wireframes
+![Wire Frame](https://github.com/Jvy-byte/Fade-Finder/blob/main/IMG_6753.jpg?raw=true)
 ![Wire Frame](https://github.com/BarberS-hop-App99/Fade-Finder/blob/main/Untitled%20design%20(1).png?raw=true)
 ![Wire Frame](https://github.com/Jvy-byte/Fade-Finder/blob/main/IMG_6753.jpg)
 
+
+# Fade Finder Data Models
+![FadeFinder_1](https://github.com/user-attachments/assets/361fdae4-0c8a-47fa-a271-3068318a431a)
+
+
+##### Barber API 
+
+- Base URL - [https://api.got.show/api](https://api.got.show/api)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /barbers | Retrieve a list of all barbers on the platform
+    `GET`    | /barbers/:id | Retrieve a specific barber profile by :id
+    `POST`    | /barbers   | Create a new barber profile
+    `PUT`    | /barbers/:id |Update barber profile information by :id
+    `DELETE`    | /barbers/:id |Update barber profile information by :id
+
+
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /users | Retrieve a list of all users on the platform
+    `GET`    | /users/:id |Retrieve a specific user profile by :id
+    `POST`    | /users  | Create a new user profile
+    `PUT`    | /users/:id |Update user profile information by :id
+    `DELETE`    | /users/:id |Delete a user profile by :id
+
+     HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /swipes/:userId | Retrieve swipe history for a specific user by userId
+    `POST`    | /swipes |Create a new swipe action (like or dislike)
+    `GET`    | /matches/:userId |Retrieve matched barbers for a specific user by userId
+
+     HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    |/appointments| Retrieve a list of all appointments
+    `GET`    | /appointments/:userId| Retrieve appointments for a specific user by userId
+    `POST`    | /appointments  | Create a new appointment
+    `PUT`    | /appointments/:appointmentId |Update appointment details by appointmentId
+    `DELETE`    | /appointments/:appointmentId |Cancel an appointment by appointmentId
+
+     HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    |/barbers/nearby?lat=:lat&lng=:lng| Find barbers nearby based on latitude (lat) and longitude (lng)
+    `GET`    | /barbers/:id/location| Get location information for a specific barber by :id
+
+     HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /barbers/:id/instagram | Retrieve Instagram profile link for a barber by :id
+    `POST`    | /barbers/:id/instagram/connect	|Connect a barber’s Instagram account
+    `DELETE`    | /barbers/:id/instagram/disconnect |Disconnect a barber’s Instagram account
+    
+   ## Build Progress
+ In developing the Fade Finders app, a significant part of the project involves designing a robust database schema that efficiently handles the core collections: Barber, Customer, and Post. Utilizing Firebase as the backend, each of these collections must be carefully structured to ensure smooth interactions between barbers and customers. The Barber collection will store essential details like barber profiles, available services, schedules, and ratings, while the Customer collection will capture user profiles, preferences, and booking history. The Post collection could be used to handle content created by barbers, such as promotional posts or updates about new services. Ensuring that these collections are well-structured with appropriate fields and relationships between documents is crucial for allowing smooth data flow, secure booking processes, and real-time updates. By defining clear relationships between Barber, Customer, and Post, the system can efficiently manage interactions, such as customers booking appointments or viewing posts, while providing an excellent user experience.
 
